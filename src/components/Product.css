@@ -1,0 +1,16 @@
+.produit {
+  border: 3px solid darkblue;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  box-shadow: 4px 6px;
+  text-align: center;
+}
+
+.produit h2 {
+  margin: 0 0 8px;
+}
+
+.produit .thunes {
+  font-weight: bold;
+}
