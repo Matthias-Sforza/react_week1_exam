@@ -20,6 +20,9 @@ const ProductForm = ({ addProduct }) => {
     nameRef.current.focus();
   };
 
+
+//je suis certain qu'on peut simplifier ça mais là je bloque un peu
+
   return (
     <form onSubmit={handleSubmit}>
       <div>

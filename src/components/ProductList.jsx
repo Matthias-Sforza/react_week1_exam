@@ -11,3 +11,6 @@ const ProductList = ({ products }) => (
 );
 
 export default ProductList;
+
+
+//j'ai essayé useReducer, j'y arrive pas

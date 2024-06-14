@@ -3,6 +3,7 @@ import ProductList from './components/ProductList.jsx';
 import ProductForm from './components/ProductForm.jsx';
 import './App.css';
 
+//une partie de l'app est repris/réutilisé du projet Guest List, en essayant d'adapter aux nouvelles consignes et aux besoins 
 
 const App = () => {
   // chargement de la liste de produit et sauvegarde
