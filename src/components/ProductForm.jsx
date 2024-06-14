@@ -1,6 +1,24 @@
 import { useState, useRef } from 'react';
+import './ProductForm.css';
 
+const ProductForm = ({ addProduct }) => {
+  // state pour les inputs
+  const [form, setForm] = useState({ name: '', description: '', price: '' });
+  const nameRef = useRef(null);
 
+  // update de la state
+  const handleChange = ({ target: { name, value } }) => {
+    setForm(previous => ({ ...previous, [name]: value }));
+  };
+
+  // submit de la form avec spread pour récup tout les paramètres de form
+  //doute sur preventDefault, bug sur mon render
+  const handleSubmit = (e) => {
+    //e.preventDefault();
+    addProduct({ ...form, price: parseFloat(form.price) });
+    setForm({ name: '', description: '', price: '' });
+    nameRef.current.focus();
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -10,7 +28,8 @@ import { useState, useRef } from 'react';
           type="text" 
           name="name" 
           value={form.name} 
-          onChange
+          onChange={handleChange} 
+          ref={nameRef} 
           required 
         />
       </div>
@@ -20,7 +39,7 @@ import { useState, useRef } from 'react';
           type="text" 
           name="description" 
           value={form.description} 
-          onChange
+          onChange={handleChange} 
           required 
         />
       </div>
@@ -30,7 +49,7 @@ import { useState, useRef } from 'react';
           type="number" 
           name="price" 
           value={form.price} 
-          onChange
+          onChange={handleChange} 
           required 
         />
       </div>
